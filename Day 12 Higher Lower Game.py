@@ -46,11 +46,9 @@ celebrity1 = choice(data)
 score = 0
 while on_streak:
   clear()
-  celebrity2 = choice(data)
-  if celebrity2 == celebrity1:
+  if (celebrity2 := choice(data)) == celebrity1:
     celebrity2 = choice(data)
-  on_streak = intro_and_retrieval(celebrity1, celebrity2, score)
-  if on_streak:
+  if on_streak := intro_and_retrieval(celebrity1, celebrity2, score):
     score += 1
     celebrity1 = celebrity2
 print(f"\nIncorrect.\n\nFinal Score: {score}")
