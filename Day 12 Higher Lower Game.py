@@ -1,7 +1,7 @@
 from art import logo, vs
 from game_data import data
-from random import choice
 from replit import clear
+import secrets
 
 ###############Function Definitions:
 
@@ -42,13 +42,13 @@ def evaluate(choice, follow_count1, follow_count2):
 ###############Functions Defined:
 
 on_streak = True
-celebrity1 = choice(data)
+celebrity1 = secrets.SystemRandom().choice(data)
 score = 0
 while on_streak:
   clear()
-  celebrity2 = choice(data)
+  celebrity2 = secrets.SystemRandom().choice(data)
   if celebrity2 == celebrity1:
-    celebrity2 = choice(data)
+    celebrity2 = secrets.SystemRandom().choice(data)
   on_streak = intro_and_retrieval(celebrity1, celebrity2, score)
   if on_streak:
     score += 1
